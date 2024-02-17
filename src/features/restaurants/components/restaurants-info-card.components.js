@@ -1,6 +1,12 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import styled from "styled-components";
 import { Card } from "react-native-paper";
+
+const Title = styled.Text`
+  padding: 16px;
+  color: red;
+`;
 
 const RestaurantInfo = ({ restaurant = {} }) => {
   const {
@@ -22,7 +28,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
           style={styles.cover}
           source={{ uri: photos[0] }}
         />
-        <Card.Title title={name} />
+        <Title>{name}</Title>
       </Card>
     </View>
   );
@@ -33,7 +39,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   cover: {
-    padding: 20,
+    padding: 16,
     backgroundColor: "white",
   },
 });
